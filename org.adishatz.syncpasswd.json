@@ -1,15 +1,9 @@
 {
     "app-id" : "org.adishatz.syncpasswd",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "45",
+    "runtime-version" : "49",
     "sdk" : "org.gnome.Sdk",
-    "sdk-extensions" : [
-        "org.freedesktop.Sdk.Extension.rust-stable"
-    ],
     "command" : "syncpasswd",
-    "build-options" : {
-        "append-path" : "/usr/lib/sdk/rust-stable/bin"
-    },
     "finish-args" : [
         "--share=network",
         "--share=ipc",
@@ -55,8 +49,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "http://libndp.org/files/libndp-1.6.tar.gz",
-                    "sha256" : "0c7dfa84e013bd5e569ef2c6292a6f72cfaf14f4ff77a77425e52edc33ffac0e"
+                    "url" : "http://libndp.org/files/libndp-1.9.tar.gz",
+                    "sha256" : "a8ab214e01dc3a9b615276905395637f391298c84d77651f0cbf0b1082dd2dd4"
                 }
             ]
         },
@@ -83,14 +77,16 @@
                 "-Dselinux=false",
                 "-Dsession_tracking=no",
                 "-Dsystemd_journal=false",
+                "-Dsystemdsystemunitdir=no",
+                "-Dnm_cloud_setup=false",
                 "-Dtests=no",
                 "-Dvapi=true"
             ],
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/NetworkManager/1.44/NetworkManager-1.44.0.tar.xz",
-                    "sha256" : "edca09637d182f806b3b12d8c5623d7badbd73ccca1ae63be20d2f298779fb9f"
+                    "url" : "https://download.gnome.org/sources/NetworkManager/1.51/NetworkManager-1.51.4.tar.xz",
+                    "sha256" : "865a7cc5686a51d7efe81d7dcb3c5246bfa3b996a58629135354972804ff4d3c"
                 }
             ]
         },
@@ -122,6 +118,7 @@
                 }
             ]
         },
+        "python3-hatchling.json",
         "python3-pyFxa.json",
         "python3-requests-hawk.json",
         "python3-pycryptodome.json",
