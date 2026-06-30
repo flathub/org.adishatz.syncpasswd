@@ -1,0 +1,4 @@
+six
+pyFxa
+requests_hawk
+pycryptodome
