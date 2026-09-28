@@ -1,7 +1,7 @@
 {
     "app-id" : "org.adishatz.syncpasswd",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "49",
+    "runtime-version" : "51",
     "sdk" : "org.gnome.Sdk",
     "command" : "syncpasswd",
     "finish-args" : [
