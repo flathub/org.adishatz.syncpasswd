@@ -118,10 +118,6 @@
                 }
             ]
         },
-        "python3-hatchling.json",
-        "python3-pyFxa.json",
-        "python3-requests-hawk.json",
-        "python3-pycryptodome.json",
         {
             "name" : "syncpasswd",
             "builddir" : true,
@@ -130,8 +126,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/gnumdk/syncpasswd.git",
-                    "tag": "0.1.1",
-                    "commit": "ce979704b9147cadc89ccbd870151c70e767f195"
+                    "tag": "0.1.2",
+                    "commit": "b82809dac26b38318a5ed42376efe0aeb8e9a223"
                 }
             ]
         }
