@@ -1,14 +1,13 @@
 {
     "app-id" : "org.adishatz.syncpasswd",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "45",
+    "runtime-version" : "51",
     "sdk" : "org.gnome.Sdk",
-    "sdk-extensions" : [
-        "org.freedesktop.Sdk.Extension.rust-stable"
-    ],
+    "sdk-extensions" : [ "org.freedesktop.Sdk.Extension.llvm22" ],
     "command" : "syncpasswd",
-    "build-options" : {
-        "append-path" : "/usr/lib/sdk/rust-stable/bin"
+    "build-options":{
+        "append-path": "/usr/lib/sdk/llvm22/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm22/lib"
     },
     "finish-args" : [
         "--share=network",
@@ -55,8 +54,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "http://libndp.org/files/libndp-1.6.tar.gz",
-                    "sha256" : "0c7dfa84e013bd5e569ef2c6292a6f72cfaf14f4ff77a77425e52edc33ffac0e"
+                    "url" : "http://libndp.org/files/libndp-1.9.tar.gz",
+                    "sha256" : "a8ab214e01dc3a9b615276905395637f391298c84d77651f0cbf0b1082dd2dd4"
                 }
             ]
         },
@@ -83,14 +82,19 @@
                 "-Dselinux=false",
                 "-Dsession_tracking=no",
                 "-Dsystemd_journal=false",
+                "-Dsystemdsystemunitdir=no",
+		"-Dsystemdsystemgeneratordir=no",
+		"-Dnbft=false",
+                "-Dnm_cloud_setup=false",
+		"-Dclat=false",
                 "-Dtests=no",
                 "-Dvapi=true"
             ],
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/NetworkManager/1.44/NetworkManager-1.44.0.tar.xz",
-                    "sha256" : "edca09637d182f806b3b12d8c5623d7badbd73ccca1ae63be20d2f298779fb9f"
+                    "url" : "https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/releases/1.58.1/downloads/NetworkManager-1.58.1.tar.xz",
+                    "sha256" : "262864cfd198123d3e5dbe91937441b97ee9059d6d712e1a5bfbb1c54668d14d"
                 }
             ]
         },
@@ -122,9 +126,6 @@
                 }
             ]
         },
-        "python3-pyFxa.json",
-        "python3-requests-hawk.json",
-        "python3-pycryptodome.json",
         {
             "name" : "syncpasswd",
             "builddir" : true,
@@ -133,8 +134,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/gnumdk/syncpasswd.git",
-                    "tag": "0.1.1",
-                    "commit": "ce979704b9147cadc89ccbd870151c70e767f195"
+                    "tag": "0.1.2",
+                    "commit": "b82809dac26b38318a5ed42376efe0aeb8e9a223"
                 }
             ]
         }
